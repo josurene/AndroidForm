@@ -17,6 +17,8 @@ public class RequiredTextField extends EditTextField {
         Boolean valid = getText().length() > 0;
         if(!valid){
             getTextView().setError("Required");
+        }else {
+            getTextView().setError(null);
         }
         return valid;
     }
