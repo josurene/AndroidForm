@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="RadioGroup" />
 
-            <RadioGroup
+            <com.form.josu.form.views.RadioGroupAutoSave
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -61,7 +61,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="RadioButton" />
-            </RadioGroup>
+            </com.form.josu.form.views.RadioGroupAutoSave>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EditText" />
+
+            <com.form.josu.form.views.EditTextAutoSave
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
