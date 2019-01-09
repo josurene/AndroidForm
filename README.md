@@ -43,6 +43,7 @@ right now these are the types of views accepted, more will be added:
 RequiredTextField
 NotRequiredCheckedBoxField
 RequiredRadioGroupField
+RequiredIfVisibleTextField
 
 
 Autosave Fields
@@ -75,3 +76,7 @@ Version 1.2 changes
 RadioGroupAutoSave has a new listener
 OnExtraCheckedChangeListener
 it returns the value of the selection, usable in cases when you have to disable another field based on that value
+
+Version 1.3
+Added a new type of field that validates if the view is visible
+RequiredIfVisibleTextField
