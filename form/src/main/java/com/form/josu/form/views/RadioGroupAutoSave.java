@@ -14,6 +14,8 @@ public class RadioGroupAutoSave extends RadioGroup {
 
     private static String TAG = "RadioGroupAuto";
 
+    OnExtraCheckedChangeListener onExtraCheckedChangeListener = null;
+
     Class modelClass;
     Field field;
     Object object;
@@ -32,7 +34,6 @@ public class RadioGroupAutoSave extends RadioGroup {
         modelClass = model;
         this.object = object;
         this.values = values;
-        childList = new ArrayList<>();
         try {
             field = modelClass.getField(fieldName);
         }catch (NoSuchFieldException e){
@@ -44,6 +45,7 @@ public class RadioGroupAutoSave extends RadioGroup {
     }
 
     private void fillChildList(){
+        childList = new ArrayList<>();
         int size = getChildCount();
         for (int i=0;i<size;i++){
             childList.add(getChildAt(i));
@@ -66,7 +68,11 @@ public class RadioGroupAutoSave extends RadioGroup {
 
                     if(index != -1){
                         try {
-                            field.set(object,values.get(index));
+                            Object value = values.get(index);
+                            field.set(object,value);
+                            if(onExtraCheckedChangeListener != null){
+                                onExtraCheckedChangeListener.onCheckedChanged(value);
+                            }
                         }catch (IllegalAccessException e){
                             Log.e(TAG,"Can't access field",e);
                         }
@@ -78,4 +84,13 @@ public class RadioGroupAutoSave extends RadioGroup {
         });
 
     }
+
+    public interface OnExtraCheckedChangeListener{
+        void onCheckedChanged(Object value);
+    };
+
+    public void setOnExtraCheckedChangeListener(OnExtraCheckedChangeListener onExtraCheckedChangeListener) {
+        this.onExtraCheckedChangeListener = onExtraCheckedChangeListener;
+    }
+
 }

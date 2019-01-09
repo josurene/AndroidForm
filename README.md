@@ -60,3 +60,7 @@ On your xml:
 ...>
 
 
+Version 1.2 changes
+RadioGroupAutoSave has a new listener
+OnExtraCheckedChangeListener
+it returns the value of the selection, usable in cases when you have to disable another field based on that value
