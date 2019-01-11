@@ -44,7 +44,7 @@ RequiredTextField
 NotRequiredCheckedBoxField
 RequiredRadioGroupField
 RequiredIfVisibleTextField
-
+MinMaxTextField
 
 Autosave Fields
 You use them like the previous fields
@@ -84,3 +84,7 @@ RequiredIfVisibleTextField
 Version 1.4
 Can set an error to a field using the Form
 formValidator.setError("field tag","error message");
+
+Version 1.5
+Added min max TestField
+new MinMaxTextField(editTextAutoSave.initialize("testMinMax",TestModel.class,model),5,20)

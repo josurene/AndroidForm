@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.form.josu.form.Form;
+import com.form.josu.form.fields.finalFields.MinMaxTextField;
 import com.form.josu.form.fields.finalFields.RequiredRadioGroupField;
 import com.form.josu.form.fields.finalFields.RequiredTextField;
 import com.form.josu.form.views.EditTextAutoSave;
@@ -39,8 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         RadioGroupAutoSave radioGroupAutoSave = findViewById(R.id.radioGroup);
         form.addField("radioGroup", new RequiredRadioGroupField(radioGroupAutoSave.initialize("testRadioGroup",TestModel.class,model,valuesForRadio)));
+
         EditTextAutoSave editTextAutoSave = findViewById(R.id.editText);
         form.addField("testString", new RequiredTextField(editTextAutoSave.initialize("testString",TestModel.class,model)));
+
+        editTextAutoSave = findViewById(R.id.editText_min_mx);
+        form.addField("testMinMax", new MinMaxTextField(editTextAutoSave.initialize("testMinMax",TestModel.class,model),5,20));
     }
 
     private void setValidateButton(){

@@ -67,10 +67,23 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EditText" />
+                android:text="Required" />
 
             <com.form.josu.form.views.EditTextAutoSave
                 android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min Max" />
+
+            <com.form.josu.form.views.EditTextAutoSave
+                android:id="@+id/editText_min_mx"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

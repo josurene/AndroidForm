@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.lang.reflect.Field;
@@ -16,11 +17,12 @@ public class RadioGroupAutoSave extends RadioGroup {
 
     OnExtraCheckedChangeListener onExtraCheckedChangeListener = null;
 
-    Class modelClass;
-    Field field;
-    Object object;
-    List<Object> values;
-    List<View> childList;
+    private Class modelClass;
+    private Field field;
+    private Object object;
+    private List<Object> values;
+    private List<View> childList;
+    private RadioButton lastButton;
 
     public RadioGroupAutoSave(Context context) {
         super(context);
@@ -50,12 +52,15 @@ public class RadioGroupAutoSave extends RadioGroup {
         for (int i=0;i<size;i++){
             childList.add(getChildAt(i));
         }
+        lastButton = (RadioButton) this.getChildAt(this.getChildCount() - 1);
     }
 
     private void setListener(){
         this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                lastButton.setError(null);
 
                 if(field != null){
                     Integer index = -1;

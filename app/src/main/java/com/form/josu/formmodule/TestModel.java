@@ -7,6 +7,8 @@ public class TestModel {
 
     String testString;
 
+    String testMinMax;
+
     @NonNull
     @Override
     public String toString() {
