@@ -4,9 +4,11 @@ import android.view.View;
 
 public abstract interface Field {
 
-    public abstract void setView(View view);
+    void setView(View view);
 
-    public abstract View getView();
+    View getView();
 
-    public abstract Boolean validate();
+    Boolean validate();
+
+    void setError(String error);
 }

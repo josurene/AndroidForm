@@ -29,6 +29,11 @@ public abstract class RadioGroupField implements Field {
     }
 
     @Override
+    public void setError(String error) {
+        lastButton.setError(error);
+    }
+
+    @Override
     public View getView() {
         return radioGroup;
     }

@@ -29,6 +29,11 @@ public abstract class EditTextField implements Field {
     }
 
     @Override
+    public void setError(String error) {
+        textView.setError(error);
+    }
+
+    @Override
     public View getView() {
         return getTextView();
     }

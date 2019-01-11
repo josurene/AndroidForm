@@ -80,3 +80,7 @@ it returns the value of the selection, usable in cases when you have to disable 
 Version 1.3
 Added a new type of field that validates if the view is visible
 RequiredIfVisibleTextField
+
+Version 1.4
+Can set an error to a field using the Form
+formValidator.setError("field tag","error message");

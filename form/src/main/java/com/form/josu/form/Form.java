@@ -26,6 +26,12 @@ public class Form {
         return valid;
     }
 
+    public void setError(String key,String error){
+        if(fields.containsKey(key)){
+            fields.get(key).setError(error);
+        }
+    }
+
     public String getText(String key){
         if(fields.containsKey(key) && fields.get(key) instanceof EditTextField){
             return ((EditTextField)fields.get(key)).getText();

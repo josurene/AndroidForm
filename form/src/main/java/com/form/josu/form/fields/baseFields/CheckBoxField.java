@@ -29,6 +29,11 @@ public abstract class CheckBoxField implements Field {
     }
 
     @Override
+    public void setError(String error) {
+        checkBox.setError(error);
+    }
+
+    @Override
     public View getView() {
         return getCheckBox();
     }
