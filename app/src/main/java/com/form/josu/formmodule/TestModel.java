@@ -9,6 +9,8 @@ public class TestModel {
 
     String testMinMax;
 
+    Integer testInteger;
+
     @NonNull
     @Override
     public String toString() {

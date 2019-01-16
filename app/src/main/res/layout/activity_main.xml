@@ -76,6 +76,21 @@
                 android:ems="10"
                 android:inputType="textPersonName" />
 
+
+            <TextView
+                android:id="@+id/textView_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Integer" />
+
+            <com.form.josu.form.views.EditTextAutoSaveInteger
+                android:id="@+id/editText_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
@@ -84,6 +99,19 @@
 
             <com.form.josu.form.views.EditTextAutoSave
                 android:id="@+id/editText_min_mx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date" />
+
+            <com.form.josu.form.views.TextViewAutoSaveDate
+                android:id="@+id/editText_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

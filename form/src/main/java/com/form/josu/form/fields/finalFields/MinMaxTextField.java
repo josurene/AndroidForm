@@ -8,6 +8,7 @@ public class MinMaxTextField extends EditTextField {
 
     private Integer min;
     private Integer max;
+    private String message = null;
 
     public MinMaxTextField(View view,Integer min,Integer max) {
         super(view);
@@ -15,11 +16,22 @@ public class MinMaxTextField extends EditTextField {
         this.max = max;
     }
 
+    public MinMaxTextField(View view,Integer min,Integer max,String message) {
+        super(view);
+        this.min = min;
+        this.max = max;
+        this.message = message;
+    }
+
     @Override
     public Boolean validate() {
         Boolean valid = (getText().length() >= min && getText().length() <= max);
         if(!valid){
-            getTextView().setError("Invalid Length: "+min+"-"+max);
+            if (message != null) {
+                getTextView().setError(message);
+            }else {
+                getTextView().setError("Invalid Length: "+min+"-"+max);
+            }
         }else {
             getTextView().setError(null);
         }
