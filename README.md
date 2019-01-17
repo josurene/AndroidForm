@@ -5,13 +5,13 @@ You can download this repo and run the example or add it on gradle.
 
 allprojects {
     repositories {
-        ...
+        
         maven { url 'https://jitpack.io' }
     }
 }
 
 dependencies {
-	        implementation 'com.github.josurene:AndroidForm:d0e68153a3'
+	        implementation 'com.github.josurene:AndroidForm:cdd723d54a'
 }
 
 
