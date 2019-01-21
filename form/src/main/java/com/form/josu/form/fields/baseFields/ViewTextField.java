@@ -1,7 +1,6 @@
 package com.form.josu.form.fields.baseFields;
 
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.form.josu.form.exceptions.WrongViewException;
@@ -15,13 +14,13 @@ public abstract class ViewTextField implements Field {
         if(!(view instanceof TextView)){
             throw new WrongViewException(this.getClass().getName());
         }
-        textView = (EditText)view;
+        textView = (TextView)view;
     }
 
     @Override
     public void setView(View view) {
         if(view instanceof TextView){
-            setTextView((EditText) view);
+            setTextView((TextView) view);
         }
     }
 
@@ -43,7 +42,7 @@ public abstract class ViewTextField implements Field {
         return textView;
     }
 
-    public void setTextView(EditText mtextView){
+    public void setTextView(TextView mtextView){
         textView = mtextView;
     }
 
