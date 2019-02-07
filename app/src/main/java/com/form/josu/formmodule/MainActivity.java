@@ -11,6 +11,7 @@ import com.form.josu.form.fields.finalFields.MinMaxTextField;
 import com.form.josu.form.fields.finalFields.RequiredRadioGroupField;
 import com.form.josu.form.fields.finalFields.RequiredTextField;
 import com.form.josu.form.views.EditTextAutoSave;
+import com.form.josu.form.views.EditTextAutoSaveAutoLoad;
 import com.form.josu.form.views.EditTextAutoSaveInteger;
 import com.form.josu.form.views.RadioGroupAutoSave;
 
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         editTextAutoSave = findViewById(R.id.editText_min_mx);
         form.addField("testMinMax", new MinMaxTextField(editTextAutoSave.initialize("testMinMax",TestModel.class,model),5,20));
+
+        EditTextAutoSaveAutoLoad editTextAutoSaveAutoLoad = findViewById(R.id.editText2);
+        form.addField("testAutoLoad", new RequiredTextField(editTextAutoSaveAutoLoad.initialize("testAutoLoad",TestModel.class,model)));
     }
 
     private void setValidateButton(){

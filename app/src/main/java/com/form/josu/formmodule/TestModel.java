@@ -11,6 +11,8 @@ public class TestModel {
 
     Integer testInteger;
 
+    String testAutoLoad = "testtest";
+
     @NonNull
     @Override
     public String toString() {
