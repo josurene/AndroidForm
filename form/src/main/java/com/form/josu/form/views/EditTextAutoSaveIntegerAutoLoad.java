@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import java.lang.reflect.Field;
 
-public class EditTextAutoSaveAutoLoad extends EditText {
+public class EditTextAutoSaveIntegerAutoLoad extends EditText {
 
     private static String TAG = "EditTextAuto";
 
@@ -17,31 +17,31 @@ public class EditTextAutoSaveAutoLoad extends EditText {
     Field field;
     Object object;
 
-    public EditTextAutoSaveAutoLoad(Context context) {
+    public EditTextAutoSaveIntegerAutoLoad(Context context) {
         super(context);
     }
 
-    public EditTextAutoSaveAutoLoad(Context context, AttributeSet attrs) {
+    public EditTextAutoSaveIntegerAutoLoad(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public EditTextAutoSaveAutoLoad(Context context, AttributeSet attrs, int defStyleAttr) {
+    public EditTextAutoSaveIntegerAutoLoad(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public EditTextAutoSaveAutoLoad(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public EditTextAutoSaveIntegerAutoLoad(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    public EditTextAutoSaveAutoLoad initialize(String fieldName, Class model, Object object){
+    public EditTextAutoSaveIntegerAutoLoad initialize(String fieldName, Class model, Object object){
         modelClass = model;
         this.object = object;
         try {
             field = modelClass.getField(fieldName);
-            String value = (String)field.get(object);
+            Integer value = (Integer)field.get(object);
             if (value != null){
-                setText(value);
+                setText(""+value);
             }
         }catch (NoSuchFieldException e){
             Log.e(TAG,"Field does not exist",e);
@@ -53,13 +53,12 @@ public class EditTextAutoSaveAutoLoad extends EditText {
 
     @Override
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
-        if(field != null){
+        if(field != null && text.length() <= 9){
             try {
-                field.set(object,text.toString());
+                field.set(object,Integer.valueOf(text.toString()));
             }catch (IllegalAccessException e){
                 Log.e(TAG,"Can't access field",e);
             }
         }
-        super.onTextChanged(text, start, lengthBefore, lengthAfter);
     }
 }
