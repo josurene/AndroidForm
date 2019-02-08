@@ -14,6 +14,7 @@ import com.form.josu.form.views.EditTextAutoSave;
 import com.form.josu.form.views.EditTextAutoSaveAutoLoad;
 import com.form.josu.form.views.EditTextAutoSaveInteger;
 import com.form.josu.form.views.RadioGroupAutoSave;
+import com.form.josu.form.views.RadioGroupAutoSaveAutoLoad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         List<Object> valuesForRadio = getValuesForRadioGroup();
 
         RadioGroupAutoSave radioGroupAutoSave = findViewById(R.id.radioGroup);
-        form.addField("radioGroup", new RequiredRadioGroupField(radioGroupAutoSave.initialize("testRadioGroup",TestModel.class,model,valuesForRadio)));
+        form.addField("testRadioGroup", new RequiredRadioGroupField(radioGroupAutoSave.initialize("testRadioGroup",TestModel.class,model,valuesForRadio)));
 
         EditTextAutoSave editTextAutoSave = findViewById(R.id.editText);
         form.addField("testString", new RequiredTextField(editTextAutoSave.initialize("testString",TestModel.class,model)));
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
         EditTextAutoSaveAutoLoad editTextAutoSaveAutoLoad = findViewById(R.id.editText2);
         form.addField("testAutoLoad", new RequiredTextField(editTextAutoSaveAutoLoad.initialize("testAutoLoad",TestModel.class,model)));
+
+        RadioGroupAutoSaveAutoLoad radioGroupAutoSaveAutoLoad = findViewById(R.id.radioGroup2);
+        form.addField("testRadioGroupAutoLoad", new RequiredRadioGroupField(radioGroupAutoSaveAutoLoad.initialize("testRadioGroupAutoLoad",TestModel.class,model,valuesForRadio,1)));
     }
 
     private void setValidateButton(){

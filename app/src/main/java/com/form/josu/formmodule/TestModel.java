@@ -13,6 +13,8 @@ public class TestModel {
 
     String testAutoLoad = "testtest";
 
+    Integer testRadioGroupAutoLoad = 1;
+
     @NonNull
     @Override
     public String toString() {
