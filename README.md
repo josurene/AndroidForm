@@ -1,3 +1,6 @@
+[![](https://jitpack.io/v/josurene/AndroidForm.svg)](https://jitpack.io/#josurene/AndroidForm)
+
+
 # AndroidForm
 Custom Classes to make forms easier in android
 
