@@ -47,7 +47,7 @@ public class EditTextAutoSaveDouble extends EditText {
 
     @Override
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
-        if(field != null){
+        if(field != null  && text.length() >=1){
             try {
                 field.set(object,Double.valueOf(text.toString()));
             }catch (IllegalAccessException e){

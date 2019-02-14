@@ -47,7 +47,7 @@ public class EditTextAutoSaveInteger extends EditText {
 
     @Override
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
-        if(field != null && text.length() <= 9){
+        if(field != null && text.length() >=1 && text.length() <= 9){
             try {
                 field.set(object,Integer.valueOf(text.toString()));
             }catch (IllegalAccessException e){
