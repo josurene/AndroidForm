@@ -27,7 +27,7 @@ public class MinMaxValueTextField extends EditTextField {
     public Boolean validate() {
         Boolean valid = false;
 
-        if(getText().length() <= 9){
+        if(getText().length() >= 1 && getText().length() <= 9){
          Integer value = Integer.valueOf(getText());
          valid = (value >= min && value <= max);
         }
