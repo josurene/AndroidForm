@@ -10,6 +10,10 @@ public class RequiredIfVisibleTextField extends EditTextField {
         super(view);
     }
 
+    public RequiredIfVisibleTextField(View view,String tag) {
+        super(view);
+    }
+
 
     @Override
     public Boolean validate(){

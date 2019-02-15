@@ -11,6 +11,10 @@ public class NotRequiredCheckBoxField extends CheckBoxField {
         super(view);
     }
 
+    public NotRequiredCheckBoxField(View view,String tag) {
+        super(view,tag);
+    }
+
     @Override
     public Boolean validate() {
         return true;

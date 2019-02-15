@@ -2,13 +2,23 @@ package com.form.josu.form.fields.interfaces;
 
 import android.view.View;
 
-public abstract interface Field {
+public abstract class Field {
 
-    void setView(View view);
+    private String tag = "default";
 
-    View getView();
+    public abstract void setView(View view);
 
-    Boolean validate();
+    public abstract View getView();
 
-    void setError(String error);
+    public abstract Boolean validate();
+
+    public abstract void setError(String error);
+
+    public String getTag(){
+        return tag;
+    }
+
+    public void setTag(String tag){
+        this.tag = tag;
+    }
 }

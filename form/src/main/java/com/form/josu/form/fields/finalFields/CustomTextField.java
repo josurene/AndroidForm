@@ -17,6 +17,10 @@ public class CustomTextField extends EditTextField {
         super(view);
     }
 
+    public CustomTextField(View view,String tag) {
+        super(view,tag);
+    }
+
     public CustomTextField addValidation(Validation v){
         validations.add(v);
         return this;

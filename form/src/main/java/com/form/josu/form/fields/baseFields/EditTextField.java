@@ -6,7 +6,7 @@ import android.widget.EditText;
 import com.form.josu.form.exceptions.WrongViewException;
 import com.form.josu.form.fields.interfaces.Field;
 
-public abstract class EditTextField implements Field {
+public abstract class EditTextField extends Field {
 
     private EditText textView;
 
@@ -15,6 +15,14 @@ public abstract class EditTextField implements Field {
             throw new WrongViewException(this.getClass().getName());
         }
         textView = (EditText)view;
+    }
+
+    public EditTextField(View view,String tag) {
+        if(!(view instanceof EditText)){
+            throw new WrongViewException(this.getClass().getName());
+        }
+        textView = (EditText)view;
+        setTag(tag);
     }
 
     @Override

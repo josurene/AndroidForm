@@ -5,8 +5,13 @@ import android.view.View;
 import com.form.josu.form.fields.baseFields.RadioGroupField;
 
 public class RequiredRadioGroupField extends RadioGroupField {
+
     public RequiredRadioGroupField(View view) {
         super(view);
+    }
+
+    public RequiredRadioGroupField(View view,String tag) {
+        super(view,tag);
     }
 
     @Override

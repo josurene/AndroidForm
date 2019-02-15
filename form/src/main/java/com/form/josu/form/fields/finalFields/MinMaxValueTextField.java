@@ -16,8 +16,21 @@ public class MinMaxValueTextField extends EditTextField {
         this.max = max;
     }
 
+    public MinMaxValueTextField(View view,String tag, Integer min, Integer max) {
+        super(view,tag);
+        this.min = min;
+        this.max = max;
+    }
+
     public MinMaxValueTextField(View view, Integer min, Integer max, String message) {
         super(view);
+        this.min = min;
+        this.max = max;
+        this.message = message;
+    }
+
+    public MinMaxValueTextField(View view,String tag, Integer min, Integer max, String message) {
+        super(view,tag);
         this.min = min;
         this.max = max;
         this.message = message;

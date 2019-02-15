@@ -4,7 +4,9 @@ import com.form.josu.form.fields.baseFields.CheckBoxField;
 import com.form.josu.form.fields.baseFields.EditTextField;
 import com.form.josu.form.fields.interfaces.Field;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Form {
@@ -22,7 +24,6 @@ public class Form {
                 valid = false;
             }
         }
-        System.out.println("valid: ");
         return valid;
     }
 
@@ -57,6 +58,27 @@ public class Form {
             return ((CheckBoxField)fields.get(key)).getValue();
         }
         return false;
+    }
+
+    public List<Field> searchByTag(String tag){
+        List<Field> results = new ArrayList<>();
+        for (Map.Entry<String,Field> e:fields.entrySet()) {
+            if (e.getValue().getTag().equals(tag)){
+                results.add(e.getValue());
+            }
+        }
+        return results;
+    }
+
+    public Boolean validateByTag(String tag){
+        Boolean valid = true;
+        List<Field> fields = searchByTag(tag);
+        for (Field f:fields) {
+            if(!f.validate()){
+                valid = false;
+            }
+        }
+        return valid;
     }
 
 }

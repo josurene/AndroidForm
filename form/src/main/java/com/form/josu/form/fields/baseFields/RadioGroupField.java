@@ -8,7 +8,7 @@ import com.form.josu.form.exceptions.WrongViewException;
 import com.form.josu.form.fields.interfaces.Field;
 
 
-public abstract class RadioGroupField implements Field {
+public abstract class RadioGroupField extends Field {
 
     private RadioGroup radioGroup;
     private RadioButton lastButton;
@@ -19,6 +19,15 @@ public abstract class RadioGroupField implements Field {
         }
         radioGroup = (RadioGroup)view;
         lastButton = (RadioButton) radioGroup.getChildAt(radioGroup.getChildCount() - 1);
+    }
+
+    public RadioGroupField(View view,String tag) {
+        if(!(view instanceof RadioGroup)){
+            throw new WrongViewException(this.getClass().getName());
+        }
+        radioGroup = (RadioGroup)view;
+        lastButton = (RadioButton) radioGroup.getChildAt(radioGroup.getChildCount() - 1);
+        setTag(tag);
     }
 
     @Override

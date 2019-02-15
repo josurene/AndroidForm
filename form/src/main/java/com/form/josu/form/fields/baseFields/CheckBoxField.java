@@ -6,7 +6,7 @@ import android.widget.CheckBox;
 import com.form.josu.form.exceptions.WrongViewException;
 import com.form.josu.form.fields.interfaces.Field;
 
-public abstract class CheckBoxField implements Field {
+public abstract class CheckBoxField extends Field {
 
     private CheckBox checkBox;
 
@@ -17,23 +17,31 @@ public abstract class CheckBoxField implements Field {
         checkBox = (CheckBox)view;
     }
 
+    public CheckBoxField(View view,String tag) {
+        if(!(view instanceof CheckBox)){
+            throw new WrongViewException(this.getClass().getName());
+        }
+        checkBox = (CheckBox)view;
+        setTag(tag);
+    }
+
     public Boolean getValue() {
         return getCheckBox().isChecked();
     }
 
-    @Override
+
     public void setView(View view) {
         if(view instanceof CheckBox){
             setCheckBox((CheckBox)view);
         }
     }
 
-    @Override
+
     public void setError(String error) {
         checkBox.setError(error);
     }
 
-    @Override
+
     public View getView() {
         return getCheckBox();
     }

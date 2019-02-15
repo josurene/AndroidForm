@@ -11,6 +11,10 @@ public class RequiredTextField extends EditTextField {
         super(view);
     }
 
+    public RequiredTextField(View view,String tag) {
+        super(view,tag);
+    }
+
 
     @Override
     public Boolean validate(){
