@@ -27,5 +27,10 @@ public class RequiredTextField extends EditTextField {
         return valid;
     }
 
+    @Override
+    public Boolean validateWithoutSettingError() {
+        return getText().length() > 0;
+    }
+
 
 }

@@ -50,4 +50,9 @@ public class MinMaxTextField extends EditTextField {
         }
         return valid;
     }
+
+    @Override
+    public Boolean validateWithoutSettingError() {
+        return (getText().length() >= min && getText().length() <= max);
+    }
 }

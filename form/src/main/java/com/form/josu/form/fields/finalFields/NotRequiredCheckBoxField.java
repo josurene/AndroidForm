@@ -19,4 +19,9 @@ public class NotRequiredCheckBoxField extends CheckBoxField {
     public Boolean validate() {
         return true;
     }
+
+    @Override
+    public Boolean validateWithoutSettingError() {
+        return true;
+    }
 }

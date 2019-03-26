@@ -36,4 +36,14 @@ public class CustomTextField extends EditTextField {
         }
         return true;
     }
+
+    @Override
+    public Boolean validateWithoutSettingError() {
+        for (Validation v:validations) {
+            if(!v.validate(this)){
+                return false;
+            }
+        }
+        return true;
+    }
 }

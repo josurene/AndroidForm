@@ -12,6 +12,8 @@ public abstract class Field {
 
     public abstract Boolean validate();
 
+    public abstract Boolean validateWithoutSettingError();
+
     public abstract void setError(String error);
 
     public String getTag(){

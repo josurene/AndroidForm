@@ -26,5 +26,10 @@ public class RequiredIfVisibleTextField extends EditTextField {
         return valid;
     }
 
+    @Override
+    public Boolean validateWithoutSettingError() {
+        return (getText().length() > 0) || !(getView().getVisibility() == View.VISIBLE);
+    }
+
 
 }

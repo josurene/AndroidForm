@@ -27,6 +27,16 @@ public class Form {
         return valid;
     }
 
+    public Boolean validateWithoutSettingError(){
+        Boolean valid = true;
+        for (Map.Entry<String,Field> e:fields.entrySet()) {
+            if (!e.getValue().validateWithoutSettingError()){
+                valid = false;
+            }
+        }
+        return valid;
+    }
+
     public void setError(String key,String error){
         if(fields.containsKey(key)){
             fields.get(key).setError(error);
@@ -75,6 +85,17 @@ public class Form {
         List<Field> fields = searchByTag(tag);
         for (Field f:fields) {
             if(!f.validate()){
+                valid = false;
+            }
+        }
+        return valid;
+    }
+
+    public Boolean validateByTagWithoutSettingError(String tag){
+        Boolean valid = true;
+        List<Field> fields = searchByTag(tag);
+        for (Field f:fields) {
+            if(!f.validateWithoutSettingError()){
                 valid = false;
             }
         }

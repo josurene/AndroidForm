@@ -45,4 +45,10 @@ public class MinTextField extends EditTextField {
         }
         return valid;
     }
+
+    @Override
+    public Boolean validateWithoutSettingError() {
+        Boolean valid = getText().length() >= min;
+        return valid;
+    }
 }

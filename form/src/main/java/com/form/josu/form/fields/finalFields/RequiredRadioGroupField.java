@@ -24,4 +24,9 @@ public class RequiredRadioGroupField extends RadioGroupField {
         }
         return validation;
     }
+
+    @Override
+    public Boolean validateWithoutSettingError() {
+        return !(getRadioGroup().getCheckedRadioButtonId() == -1);
+    }
 }
