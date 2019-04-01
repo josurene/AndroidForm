@@ -14,7 +14,7 @@ allprojects {
 }
 
 dependencies {
-	        implementation 'com.github.josurene:AndroidForm:cdd723d54a'
+	        implementation 'com.github.josurene:AndroidForm:abd789b9be'
 }
 
 
